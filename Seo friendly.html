@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first Project</title>
+<style>/* ==== MAIN PAGE (index.html) CSS ==== */
+
+/* basic reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* overall theme */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(800px 400px at 10% 20%, rgba(155, 77, 255, 0.14), transparent 12%),
+    radial-gradient(700px 400px at 90% 80%, rgba(0, 240, 255, 0.10), transparent 10%),
+    #050814;
+  color: #e8f4ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 32px;
+}
+
+/* subtle scanlines */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 3px),
+    radial-gradient(rgba(255, 255, 255, 0.04) 0.5px, transparent 1px);
+  background-size: 100% 5px, 3px 3px;
+  opacity: 0.35;
+  mix-blend-mode: soft-light;
+}
+
+/* layout bounds */
+header,
+main,
+footer,
+section {
+  width: 100%;
+  max-width: 980px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== HEADER ===== */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(3, 6, 20, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 60px rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+/* brand name */
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* header GIF */
+header img {
+  border-radius: 12px;
+  height: 150px;
+  width: auto;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  object-fit: cover;
+}
+
+/* nav links */
+nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: #c1d6ff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(9, 9, 32, 0.9));
+  transition: transform 0.18s ease, box-shadow 0.18s ease, color 0.18s ease,
+    background 0.18s ease;
+}
+
+nav a:hover {
+  transform: translateY(-3px);
+  color: #ffffff;
+  box-shadow: 0 14px 40px rgba(0, 240, 255, 0.25);
+  background: linear-gradient(90deg, rgba(155, 77, 255, 0.5), rgba(0, 240, 255, 0.5));
+}
+
+/* ===== MAIN CONTENT ===== */
+
+main {
+  margin-top: 22px;
+  padding: 20px 18px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(8, 9, 22, 0.95), rgba(2, 4, 18, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* welcome heading */
+main > h2 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: #ffffff;
+}
+
+/* welcome paragraph */
+main > p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #c1d6ff;
+  max-width: 80ch;
+}
+
+/* articles & section cards */
+article,
+main > section {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: radial-gradient(circle at top left, rgba(0, 240, 255, 0.08), transparent 50%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(8, 9, 22, 0.96));
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 14px 50px rgba(0, 0, 0, 0.7);
+}
+
+/* headings inside cards */
+article h2,
+section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #f5f7ff;
+}
+
+article h3 {
+  font-size: 1.02rem;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+article h4 {
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #dbe4ff;
+}
+
+article p,
+section p {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: #bcccf3;
+}
+
+/* recommended tools card: thoda spacing */
+article h2 + h3 {
+  margin-top: 6px;
+}
+
+/* FAQ link card */
+article h2 a {
+  color: #7fe5ff;
+  text-decoration: none;
+}
+
+article h2 a:hover {
+  text-decoration: underline;
+}
+
+/* Our Mission section (outside main) */
+body > section {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(2, 4, 18, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.85);
+}
+
+body > section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+body > section p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #c1d6ff;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(7, 9, 24, 0.97), rgba(1, 2, 10, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 12px;
+  font-size: 0.9rem;
+  color: #94a8d8;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 860px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-left: 0;
+  }
+
+  header img {
+    align-self: stretch;
+    height: 120px;
+    object-fit: cover;
+  }
+}
+</style>
+<body>
+    <header>
+
+        <h1>CodeSphere</h1>
+<img src="https://wallpapercave.com/wp/wp3284833.gif" height="150">
+        <nav>
+            <a href="/Home">Home Page</a>
+            <a href="About Us/About.html">About Us</a>
+            <a href="https://www.instagram.com/ranjanhaimeranaam/" target="_blank">Social</a>
+        </nav>
+    </header>
+    <main>
+        <!--welcome-->
+        <h2>Smart Insights. Simple Tech.</H2>
+        <p>CodeSphere is your trusted hub for technology insights, reviews, tutorials, and digital solutions. We break
+            down complex tech into simple, useful information you can actually use</p>
+        <!--tech tips-->
+        <article>
+
+            <h2>Latest Tech tips</h2>
+
+            <h3>1. How to Speed Up Slow Android</h3>
+            <p>Clear cache, remove unnecessary apps, and turn off background usage for better performance.</p>
+            <h3>2. Simple Windows Tricks</h3>
+            <p>Use Win + R to quickly open tools. Disk Cleanup helps speed things up instantly.</p>
+            <h3>3. Laptop Battery Saving Tips</h3>
+            <p>Keep brightness low and turn off background processes for longer battery life. </p>
+        </article>
+
+        <!--quick tech tips-->
+        <article>
+            <h2>Quick Tech Guides</h2>
+            <h4>3 quick tutorials</h4>
+            <p>Clean Phone Storage.</p>
+            <p>Fix Slow Laptop.</p>
+            <p>Improve WiFi Speed.</p>
+        </article>
+        <!--Recommended Tools & Websites-->
+
+        <article>
+            <h2>Recommended Tools & Websites.</h2>
+            <h3>Useful Websites</h3>
+            <p>Canva.</p>
+            <p>TinyPNG</p>
+            <p>Pixabay</p>
+
+            <h2>Useful Software.</h2>
+            <p>VLC</p>
+            <p>OBS Studio</p>
+            <p>7-Zip</p>
+        </article>
+        <!--Learn Web Development Roadmap-->
+        <article>
+            <h2>Learn Web Development Roadmap</h2>
+            <p>HTML</p>
+            <p>CSS</p>
+            <p>JavaScript</p>
+            <p>GitHub</p>
+            <p>Projects</p>
+        </article>
+        <!--Security & Privacy Tips-->
+        <article>
+            <h2>Security & Privacy Tips</h2>
+            <p>Strong passwords</p>
+            <p>Avoid fake apps</p>
+            <p>Don’t click random links</p>
+        </article>
+<!--FAQ-->
+<article>
+    <h2>
+        <a href="faq questions ans.html">FAQ</a>
+    </h2>
+    
+</article>
+    </main>--
+    <!--why codesphere-->
+    <section>
+
+        <h2>Our Mission</h2>
+
+        <p>CodeSphere is a simple tech website designed for beginners.Our goal is to make technology easy to understand
+            with simple guides, basic tutorials,
+            and useful small tips that anyone can use in daily life.</p>
+    </section>
+    </main>
+
+    <footer>
+
+        <p>© 2025 CodeSphere — All Rights Reserved.</p>
+        <p>Made with passion for technology and learning.</p>
+
+    </footer>
+</body>
+
+</html>
