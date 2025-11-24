@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>/* ==== FAQ PAGE CSS ==== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(700px 350px at 15% 15%, rgba(155, 77, 255, 0.16), transparent 12%),
+    radial-gradient(700px 350px at 85% 90%, rgba(0, 240, 255, 0.14), transparent 10%),
+    #030512;
+  color: #e7f2ff;
+  min-height: 100vh;
+  padding: 26px 16px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* main wrapper */
+main {
+  width: 100%;
+  max-width: 850px;
+}
+
+/* main title */
+h1 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 170px;
+  height: 5px;
+  border-radius: 999px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #9b4dff, #00f0ff);
+  box-shadow: 0 12px 40px rgba(0, 240, 255, 0.4);
+}
+
+/* each FAQ block */
+.faq-item {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(8, 9, 22, 0.96), rgba(2, 4, 16, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.9);
+}
+
+/* question */
+.faq-item h2 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+/* answer */
+.faq-item p {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #c1d4ff;
+}
+
+/* link back to home or main FAQ link page */
+a {
+  display: inline-block;
+  margin-top: 22px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(155, 77, 255, 0.9), rgba(0, 240, 255, 0.9));
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 1);
+}
+
+/* responsive */
+@media (max-width: 720px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .faq-item {
+    padding: 12px 14px;
+  }
+}
+</style>
+</head>
+<body>
+    <article>
+        <!--Q1-->
+    <h2>What is CodeSphere?</h2>
+<p>CodeSphere is a simple and beginner-friendly tech website created to help people understand technology in a clear and easy way. It provides small guides, daily tech tips, and useful information about phones, laptops, websites, and basic digital skills.</p>
+<!--Q2-->
+<h2>2) Who is it for?</h2> 
+<p>CodeSphere is mainly for beginners, students, and normal users who want to learn tech without complicated language. Even if someone has zero technical knowledge, they can easily understand the guides and tips shared here.</p>  
+<!--Q3-->
+<h2>3) What content do you post?</h2>
+<h5>:- We post practical tech content such as:</h5>
+<!--Q3-->
+<p>small tutorials.</p>
+<p>troubleshooting tips.</p>
+<p>phone & laptop guides.</p>
+<p>tech tools and software recommendations.</p>
+<p>simple explanations of everyday tech problems.</p>
+<h5>Everything is explained in a direct, beginner-friendly way.</h5>
+<!--Q4-->
+<h2>4) How often is it updated?</h2>
+<p>CodeSphere is updated whenever new useful content, tips, or guides are available. There is no fixed schedule, but new updates come regularly based on what we learn or what users usually face in daily tech issues.</p>
+<!--Q5-->
+<h2>5) How to contact?</h2>
+<p>You can easily contact through our Instagram page. The link is available in the navigation bar at the top of the website. In the future, a proper contact form or email support section may also be added.</p>
+</article>
+</body>
+</html>
